@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import '../styles.css';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  standalone: true,
+  imports: [RouterModule],
+  selector: 'ge-root',
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = 'lucius';
-}
+export class AppComponent {}
