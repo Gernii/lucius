@@ -1,0 +1,17 @@
+
+.ProseMirror {
+  @apply focus:outline-none;
+}
+
+[data-image].ProseMirror-selectednode img,
+[data-youtube-video].ProseMirror-selectednode iframe {
+  @apply ring-4 ring-blue-400 transition-shadow duration-150;
+}
+hr.ProseMirror-selectednode {
+  @apply border-blue-500;
+}
+
+.ProseMirror .is-empty:first-child::before {
+  content: attr(data-placeholder);
+  @apply h-0 float-left pointer-events-none text-gray-300;
+}
