@@ -18,7 +18,7 @@ import { Lucius } from '../lucius/lucius';
       #container
       spellcheck="false"
       autocapitalize="off"
-      class="prose prose-slate max-w-none"
+      class="prose-slate max-w-none"
     ></div>
   `,
   styleUrls: ['./lucius.component.css'],

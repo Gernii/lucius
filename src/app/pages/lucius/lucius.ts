@@ -13,10 +13,10 @@ export interface CreateLuciusOptions {
 }
 
 const editorToLucius = (editor: Editor) => {
-  function getState(
+  const getState = (
     editor: Editor,
     type: 'update' | 'selectionUpdate' | 'initial'
-  ) {
+  ) => {
     return {
       type,
       historyDepth: {
@@ -31,7 +31,7 @@ const editorToLucius = (editor: Editor) => {
         code: editor.isActive('code'),
       },
     };
-  }
+  };
   const content = new BehaviorSubject<ReturnType<typeof getState>>(
     getState(editor, 'initial')
   );
@@ -76,14 +76,16 @@ const editorToLucius = (editor: Editor) => {
   };
 };
 
-export const initializeLucius = (option: CreateLuciusOptions) => {
+export const initializeLucius = (options: CreateLuciusOptions) => {
+  console.log(options);
+
   const editor = new Editor({
-    element: option.element,
-    editable: option.editable,
-    extensions: [...(option.extensions || [])],
+    element: options.element,
+    editable: options.editable,
+    extensions: [...(options.extensions || [])],
     editorProps: {
-      scrollMargin: option.scrollMargin ?? 240,
-      scrollThreshold: option.scrollThreshold ?? 240,
+      scrollMargin: options.scrollMargin ?? 240,
+      scrollThreshold: options.scrollThreshold ?? 240,
     },
   });
 
